@@ -3,13 +3,19 @@ import java.util.*;
 public class Main {
 
     // If you dont have instruction if you'll have endless loop
-    static void countdown(int counter){
+    static void countDown(int counter){
        if(counter<=0) {
            return;
        }else{
            System.out.println(counter);
-           countdown(counter - 1);
+           countDown(counter - 1);
        }
+    }
+    static void countDownLoop(int counter){
+        while(counter > 0){
+            System.out.println(counter);
+            counter--;
+        }
     }
 
     // Simple function figure out factorial
@@ -68,7 +74,10 @@ public class Main {
 
 
         System.out.println("Countdown Test: ");
-        countdown(10);
+        countDown(10);
+
+        System.out.println("Countdown Test Loop: ");
+        countDownLoop(10);
 
         System.out.println("Factorial Test: ");
         System.out.println("Fact(10)= "+factorial(10));
