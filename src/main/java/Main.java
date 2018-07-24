@@ -59,6 +59,16 @@ public class Main {
         return sum;
     }
 
+    static int fibonacci(int figure){
+        if(figure==0){
+            return 0;
+        }else if(figure==1){
+            return 1;
+        }else{
+           return fibonacci(figure-1)+fibonacci(figure-2);
+        }
+    }
+
     public static void main(String [] args){
 
         Integer table[] = new Integer[]{1,2,3};
@@ -81,5 +91,8 @@ public class Main {
 
         System.out.println("Factorial Test: ");
         System.out.println("Fact(10)= "+factorial(10));
+
+        System.out.println("Fibo Test: ");
+        System.out.println("Fibo: "+fibonacci(10));
     }
 }
