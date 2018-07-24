@@ -20,6 +20,13 @@ public class Main {
         return x*factorial(x-1);
     }
 
+    static int sumTableLoop(Integer [] tab){
+        int sum = 0;
+        for (int i = 0; i < tab.length; i++) {
+            sum+=tab[i];
+        }
+        return sum;
+    }
     static int sumTable(Integer [] tab){
         if(tab.length==0){
             return 0;
@@ -38,6 +45,14 @@ public class Main {
         return list.get(0) + sumList(list.subList(1,list.size()));
     }
 
+    static int sumListLoop(List<Integer> list){
+        int sum=0;
+        for (int x:list) {
+            sum+=x;
+        }
+        return sum;
+    }
+
     public static void main(String [] args){
 
         Integer table[] = new Integer[]{1,2,3};
@@ -48,6 +63,10 @@ public class Main {
 
         System.out.println("Test sumTable: "+sumTable(table));
         System.out.println("Test sumList: "+sumList(list));
+        System.out.println("Test sumTableLoop: "+sumTableLoop(table));
+        System.out.println("Test sumListLoop: "+sumListLoop(list));
+
+
         System.out.println("Countdown Test: ");
         countdown(10);
 
