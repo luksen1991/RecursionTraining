@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Main {
 
     // If you dont have instruction if you'll have endless loop
@@ -18,8 +20,34 @@ public class Main {
         return x*factorial(x-1);
     }
 
+    static int sumTable(Integer [] tab){
+        if(tab.length==0){
+            return 0;
+        }else if( tab.length==1){
+            return tab[0];
+        }else{
+            return tab[0] +(sumTable(Arrays.copyOfRange(tab,1,tab.length)));
+        }
+    }
+    static int sumList(List<Integer> list){
+        if(list.size()==0){
+            return 0;
+        }else if(list.size()==1){
+            return list.get(0);
+        }
+        return list.get(0) + sumList(list.subList(1,list.size()));
+    }
+
     public static void main(String [] args){
 
+        Integer table[] = new Integer[]{1,2,3};
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(11);
+        list.add(12);
+        list.add(13);
+
+        System.out.println("Test sumTable: "+sumTable(table));
+        System.out.println("Test sumList: "+sumList(list));
         System.out.println("Countdown Test: ");
         countdown(10);
 
