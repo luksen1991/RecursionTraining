@@ -51,6 +51,56 @@ public class Main {
         return list.get(0) + sumList(list.subList(1,list.size()));
     }
 
+    static int findMaxRecursively(List<Integer> numbers)
+    {
+        if(numbers.size() == 1)
+            return numbers.get(0);
+
+        int sub_max= findMaxRecursively(numbers.subList(1,numbers.size()));
+        if(numbers.get(0)>sub_max){
+
+        }else {
+            return sub_max;
+        }
+        return numbers.get(0);
+    }
+
+    static int finMaxRecursivelyLoop(List<Integer> numbers){
+        int max= numbers.get(0);
+
+        for (int x:numbers) {
+            if(x>=max){
+                max=x;
+            }
+        }
+        return max;
+    }
+
+    static int findMinRecursively(List<Integer> numbers)
+    {
+        if(numbers.size() == 1)
+            return numbers.get(0);
+
+        int sub_min= findMaxRecursively(numbers.subList(1,numbers.size()));
+        if(numbers.get(0)<sub_min){
+
+        }else {
+            return sub_min;
+        }
+        return numbers.get(0);
+    }
+
+    static int finMinRecursivelyLoop(List<Integer> numbers){
+        int min= numbers.get(0);
+
+        for (int x:numbers) {
+            if(x<=min){
+                min=x;
+            }
+        }
+        return min;
+    }
+
     static int sumListLoop(List<Integer> list){
         int sum=0;
         for (int x:list) {
@@ -71,16 +121,21 @@ public class Main {
 
     public static void main(String [] args){
 
-        Integer table[] = new Integer[]{1,2,3};
+        Integer table[] = new Integer[]{3,5,1};
         List<Integer> list = new ArrayList<Integer>();
         list.add(11);
-        list.add(12);
+        list.add(99);
         list.add(13);
+        list.add(14);
 
         System.out.println("Test sumTable: "+sumTable(table));
         System.out.println("Test sumList: "+sumList(list));
         System.out.println("Test sumTableLoop: "+sumTableLoop(table));
         System.out.println("Test sumListLoop: "+sumListLoop(list));
+        System.out.println("Test maxList: "+findMaxRecursively(list));
+        System.out.println("Test minList: "+findMinRecursively(list));
+        System.out.println("Test maxListLoop: "+ finMaxRecursivelyLoop(list));
+        System.out.println("Test minListLoop: "+ finMinRecursivelyLoop(list));
 
 
         System.out.println("Countdown Test: ");
